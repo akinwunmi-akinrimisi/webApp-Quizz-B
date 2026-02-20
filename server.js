@@ -2,7 +2,7 @@ const express = require("express");
 require("dotenv").config();
 
 const app = express();
-const PORT = parseInt(process.env.PORT, 10); // Set server port
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000; // Set server port with default
 
 app.use(express.static("dist"));
 
