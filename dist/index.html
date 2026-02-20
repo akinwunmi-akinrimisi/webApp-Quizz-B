@@ -1,17 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>JavaScript Quiz Game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Certification Quiz</title>
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-  <div id="quiz-container">
-    <h1 id="question"></h1>
-    <ul id="choices"></ul>
-    <div id="feedback"></div>
-    <button id="back-btn">Back</button>
-    <button id="next-btn">Next Question</button>
+  <div class="quiz-app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">☁️</span>
+          <h1 class="logo-text">AWS Quiz</h1>
+        </div>
+        <div class="progress-section">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <span class="progress-text" id="progress-text">Question 1 of 7</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Quiz Container -->
+    <main class="quiz-container">
+      <div class="quiz-card">
+        <!-- Question Section -->
+        <div class="question-section">
+          <h2 id="question" class="question-text"></h2>
+        </div>
+
+        <!-- Choices Section -->
+        <div class="choices-section">
+          <ul id="choices" class="choices-list"></ul>
+        </div>
+
+        <!-- Feedback Section -->
+        <div id="feedback" class="feedback"></div>
+
+        <!-- Button Section -->
+        <div class="button-section">
+          <button id="back-btn" class="btn btn-secondary">← Back</button>
+          <button id="next-btn" class="btn btn-primary">Next Question →</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Results Screen (initially hidden) -->
+    <div id="results-screen" class="results-screen hidden">
+      <div class="results-card">
+        <div class="results-header">
+          <h2>Quiz Completed! 🎉</h2>
+        </div>
+        <div class="score-display">
+          <div class="score-number" id="final-score">0</div>
+          <div class="score-total">out of <span id="total-questions">7</span></div>
+        </div>
+        <div class="score-percentage" id="score-percentage">0%</div>
+        <p class="score-message" id="score-message"></p>
+        <button class="btn btn-primary" onclick="location.reload()">Retake Quiz</button>
+      </div>
+    </div>
   </div>
+
   <script src="assets/js/app.js"></script>
 </body>
 </html>
